@@ -1,0 +1,48 @@
+.wrapper {
+  width: 100%;
+
+}
+
+.wrapper > form {
+  max-width: 736px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 90px;
+  gap: .5rem;
+  margin-top: -2rem;
+}
+
+.input {
+  background: var(--gray-500);
+  border: none;
+  border-radius: 8px;
+  padding: 1rem;
+  height: 54px;
+}
+
+form button[type=submit] {
+  background: var(--blue-dark);
+  font-weight: bold;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background-color 0.1s;
+}
+form button[type=submit] > svg {
+  margin-left: 4px;
+}
+
+form button[type=submit]:hover {
+  background: var(--blue);
+}
+
+
+@media(max-width: 380px) {
+  form {
+    padding: 0 1rem;
+  }
+}
