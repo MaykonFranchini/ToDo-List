@@ -1,0 +1,47 @@
+.taskbox {
+  margin: 0 auto;
+  max-width: 736px;
+}
+
+.taskbox > header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 4rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--gray-500);
+}
+
+.taskbox span {
+  font-weight: bold;
+  color: var(--gray-100);
+  padding: .15rem .5rem;
+  background: var(--gray-500);
+  border-radius: 50%;
+  margin-left: .5rem;
+}
+
+.doneTasks {
+  font-weight: bold;
+  color: var(--purple);
+}
+
+.totalTasks {
+  font-weight: bold;
+  color: var(--blue);
+}
+
+.emptyTasksBox {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  color: var(--gray-300);
+}
+
+.emptyTasksBox > strong {
+  margin-top: 1rem;
+  line-height: 1.8;
+  font-weight: bold;
+}
