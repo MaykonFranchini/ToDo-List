@@ -34,7 +34,8 @@ form button[type=submit] {
   display: flex;
   align-items: center;
   justify-content: center;
-
+  
+  cursor: pointer;
   transition: background-color 0.1s;
 }
 form button[type=submit] > svg {

@@ -12,7 +12,7 @@
   border-bottom: 2px solid var(--gray-500);
 }
 
-.taskbox span {
+.taskbox .taskCount {
   font-weight: bold;
   color: var(--gray-100);
   padding: .15rem .5rem;

@@ -1,0 +1,94 @@
+.taskList {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  background: var(--gray-500);
+  padding: 1rem;
+  border-radius: 8px;
+  
+}
+
+.deleteIcon {
+  padding: 5px;
+  background: transparent;
+  color: var(--gray-300);
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.deleteIcon:hover {
+  background: var(--gray-400);
+  color: var(--danger);
+}
+
+.taskList input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+label {
+  display: block;
+  position: relative;
+  padding-left: 1.7rem;
+
+}
+.taskCheckbox {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  height: 22px;
+  width: 22px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid var(--blue);
+}
+
+.taskCheckbox:hover {
+  background: var(--gray-600);
+  border-color: var(--blue-dark);
+}
+
+.taskCheckbox:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+label > input:checked ~ .taskCheckbox:after {
+  display: block; 
+}
+
+input[type="checkbox"]:checked + p {
+  text-decoration:line-through;
+  color: var(--gray-300);
+}
+
+label > input:checked ~ .taskCheckbox {
+  background: var(--purple-dark);
+  border-color: transparent;
+}
+
+label > input:checked ~ .taskCheckbox:hover {
+  background: var(--purple);
+
+}
+
+label .taskCheckbox:after {
+  left: 6px;
+  top: 2px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+
+}
+
+label, .taskCheckbox {
+  cursor: pointer;
+}
