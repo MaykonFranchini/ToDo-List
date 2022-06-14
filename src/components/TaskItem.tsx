@@ -1,18 +1,31 @@
-import { Trash, Check } from 'phosphor-react';
+import { Trash } from 'phosphor-react';
 import styles from './TaskItem.module.css'
-export function TaskItem() {
+import { Task } from '../App'
+
+interface TaskProps extends Task {
+  onCheckTask: (task:string, completed:boolean)=> void;
+  deleteTask: (task:string)=> void;
+}
+
+export function TaskItem({content, completed, onCheckTask, deleteTask}:TaskProps) {
+
+  function updatetask() {
+    onCheckTask(content, completed)
+  }
+  function handleDeleteTask() {
+    deleteTask(content)
+  }
+  
   return (
     <div className={styles.taskList}>
       <div>
-        <label htmlFor="task">
-          <input type="checkbox" id='task' />
-          <p>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</p>
+        <label htmlFor={content}>
+          <input type="checkbox" id={content} onChange={updatetask} checked={completed} />
+          <p>{content}</p>
           <span className={styles.taskCheckbox}></span>
         </label>
       </div>
-      <span className={styles.deleteIcon}>
-        <Trash size={16} />
-      </span>
+      <button className={styles.deleteIcon} onClick={handleDeleteTask}><Trash size={16} /></button>
     </div>
   )
 }
